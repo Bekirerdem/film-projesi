@@ -20,15 +20,19 @@ function addFilm(e) {
 
   if (title === "" || director === "" || url === "") {
     // Hata mesajı
+    ui.displayMessages("Tüm alanları doldurun...", "danger");
   } else {
     // Yeni film ekleme
     const newFilm = new Film(title, director, url);
 
-    // Arayüze film ekleme
-    ui.addFilmToUI(newFilm);
+    
+        // Arayüze film ekleme
+        ui.addFilmToUI(newFilm);
+        ui.displayMessages('Film başarıyla eklendi...', "succes")
+    
   }
 
-  ui.clearInputs(titleElement,directorElement,urlElement);
+  ui.clearInputs(titleElement, directorElement, urlElement);
 
   e.preventDefault();
 }
